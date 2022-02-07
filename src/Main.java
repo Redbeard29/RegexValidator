@@ -3,8 +3,9 @@ import java.util.Scanner;
 public class Main {
 
     public static boolean doesStringMatch(String inputString){
-
-        return inputString.matches(".*[a-z].*") || inputString.matches(".*[A-Z].*");
+        return inputString.matches(".*[a-z].*") &&
+                inputString.matches(".*[A-Z].*") &&
+                inputString.matches(".*[0-9].*");
     }
 
     public static void main(String args[]){
@@ -18,7 +19,8 @@ public class Main {
             System.out.println("Input passes regex");
         }
         else{
-            System.out.println("Input does not pass regex");
+            System.out.println("Input does not pass regex. Make sure your input contains at least one lowercase letter, " +
+                    "one uppercase letter, and one number");
         }
 
     }
